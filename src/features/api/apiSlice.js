@@ -5,15 +5,26 @@ export const apiSlice = createApi({
     baseQuery: fetchBaseQuery({
         baseUrl: "http://localhost:9000",
     }),
+    refetchOnReconnect: true,
     endpoints: (builder) => ({
         getVideos:builder.query({
-            query:()=> '/videos'
+            query:()=> '/videos',
+            // keepUnusedDataFor:0
         }),
         getVideo:builder.query({
             query:(videoId)=> `/videos/${videoId}`
         }),
+        addVideo: builder.mutation({
+            query:(data) => ({
+                url:'/videos',
+                method:'POST',
+                body:data
+            })
+        })
     }),
 });
 
 
-export const {useGetVideosQuery,useGetVideoQuery} = apiSlice;
+
+
+export const {useGetVideosQuery,useGetVideoQuery,useAddVideoMutation} = apiSlice;

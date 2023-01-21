@@ -9,7 +9,8 @@ import Error from "../ui/Error";
 export default function Video() {
     let content = null;
     const { videoId } = useParams();
-    const { data: video, isLoading, isError, error, isSuccess } = useGetVideoQuery(videoId);
+    // const { data: video, isLoading, isError, error, isSuccess } = useGetVideoQuery(videoId,{refetchOnMountOrArgChange:5,pollingInterval:1000});
+    const { data: video, isLoading, isError, error, isSuccess } = useGetVideoQuery(videoId,{refetchOnMountOrArgChange:5});
 
     console.log('====================================');
     console.log(video);
