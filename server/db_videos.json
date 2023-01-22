@@ -77,7 +77,6 @@
       "link": "https://www.youtube-nocookie.com/embed/smDa6hoxLKI",
       "thumbnail": "https://i3.ytimg.com/vi/smDa6hoxLKI/maxresdefault.jpg"
     },
-   
     {
       "title": "Closure",
       "author": "fahim",
@@ -88,6 +87,17 @@
       "duration": "10",
       "views": "2.4k",
       "id": 8
+    },
+    {
+      "title": "Closure",
+      "author": "Fahim",
+      "description": "For the example above, this tells RTK Query that after the addPost and/or editPost mutations are called and completed, any cache data supplied with the 'Post' tag is no longer valid. If a component is currently subscribed to the cached data for a 'Post' tag after the above mutations are called and complete, it will automatically re-fetch in order to retrieve up to date data from the server.",
+      "link": "https://www.youtube.com/watch?v=2I7uX8m0Ta0",
+      "thumbnail": "https://i.ytimg.com/vi/2I7uX8m0Ta0/hq720.jpg?sqp=-oaymwEXCNAFEJQDSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLB-OnlKsXz8bnLtWa8vEkUdD_8J4w",
+      "date": "22-jan-23",
+      "duration": "2 hr",
+      "views": "2k",
+      "id": 9
     }
   ]
 }
