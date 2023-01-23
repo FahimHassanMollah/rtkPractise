@@ -6,7 +6,7 @@ export const apiSlice = createApi({
         baseUrl: "http://localhost:9000",
     }),
     refetchOnReconnect: true,
-    tagTypes: ['Videos'],
+    tagTypes:  ['Videos'],
     endpoints: (builder) => ({
         getVideos:builder.query({
             query:()=> '/videos',
@@ -14,7 +14,8 @@ export const apiSlice = createApi({
             // keepUnusedDataFor:0
         }),
         getVideo:builder.query({
-            query:(videoId)=> `/videos/${videoId}`
+            query:(videoId)=> `/videos/${videoId}`,
+            providesTags:(result,error,arg)=> [{type:'Video',id:arg}]
         }),
         addVideo: builder.mutation({
             query:(data) => ({
@@ -30,7 +31,7 @@ export const apiSlice = createApi({
                 method:'PATCH',
                 body:data
             }),
-            invalidatesTags: ['Videos'],
+            invalidatesTags: (result,error,arg)=> [{type:'Video',id:arg.id},'Videos'],
         })
     }),
 });
