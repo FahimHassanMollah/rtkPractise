@@ -23,6 +23,14 @@ export const apiSlice = createApi({
                 body:data
             }),
             invalidatesTags: ['Videos'],
+        }),
+        editVideo: builder.mutation({
+            query:({id,data}) => ({
+                url:`/videos/${id}`,
+                method:'PATCH',
+                body:data
+            }),
+            invalidatesTags: ['Videos'],
         })
     }),
 });
@@ -30,4 +38,4 @@ export const apiSlice = createApi({
 
 
 
-export const {useGetVideosQuery,useGetVideoQuery,useAddVideoMutation} = apiSlice;
+export const {useGetVideosQuery,useGetVideoQuery,useAddVideoMutation,useEditVideoMutation} = apiSlice;

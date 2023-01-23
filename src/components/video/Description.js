@@ -3,7 +3,7 @@ import deleteImage from "../../assets/delete.svg";
 import editImage from "../../assets/edit.svg";
 
 export default function Description({video}) {
-    const {description,title,views,date} = video;
+    const {description,title,views,date,id} = video;
     return (
         <div>
             <h1 className="text-lg font-semibold tracking-tight text-slate-800">
@@ -23,7 +23,8 @@ export default function Description({video}) {
                                 alt="Edit"
                             />
                         </div>
-                        <Link to="/videos/edit/1">
+                        <Link to={`/videos/edit/${id}`}>
+                        {/* <Link to="/videos/edit/1"> */}
                             <span className="text-sm leading-[1.7142857] text-slate-600 cursor-pointer">
                                 Edit
                             </span>
